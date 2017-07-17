@@ -2,8 +2,9 @@
 /* GENERAL */
 /*****************************/
 html, body {
-	background: #a1a7d4;
+	background: #000;
 	color: #fff;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 	font-size: 16px;
+	text-align: center;
 }

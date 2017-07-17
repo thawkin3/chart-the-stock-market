@@ -3,7 +3,8 @@ var app = angular.module('ChartTheStockMarket', ['ngRoute', 'ngSanitize', 'ui.bo
 app.config(function ($routeProvider) {
 	$routeProvider
 		.when('/', {
-			redirectTo: '/',
+			controller: 'mainController',
+			templateUrl:'javascripts/app/views/main.html',
 			access: {restricted: false}
 		})
 		.otherwise({ 
