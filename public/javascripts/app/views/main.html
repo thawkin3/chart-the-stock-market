@@ -11,7 +11,25 @@
 	<div class="container">
         <div class="row">
         	<div class="mainPageContent">
-                Main page content here    
+                <div id="stockChart"></div>
+                <div class="buttonsContainer">
+                    <form id="addStocksForm" class="form-inline" ng-submit="addStock()">
+                        <label class="sr-only" for="stockSymbol">Name</label>
+                        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="stockSymbol" ng-model="stockSymbol" placeholder="GOOG">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </form>
+                </div>
+                <div class="selectedStocksContainer">
+                    <div ng-repeat="stock in stocks track by $index" class="selectedStock col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                        <div class="innerStockContent">
+                            <button type="button" class="btn btn-danger removeButtonContainer" aria-label="Remove Stock" ng-click="removeStock(stock.symbol)">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </button>
+                            <p><span class="stockName">{{ stock.name }}</span> <span class="stockSymbol">({{ stock.symbol }})</span></p>
+                            <p><span class="stockPrice">{{ stock.price | currency: "$" }}</span></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
